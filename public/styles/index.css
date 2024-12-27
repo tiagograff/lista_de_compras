@@ -1,6 +1,7 @@
 @import url(./variables.css);
 @import url(./header.css);
 @import url(./add.css);
+@import url(./complete.css);
 
 *{
     margin: 0;

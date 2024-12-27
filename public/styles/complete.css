@@ -1,0 +1,10 @@
+.complete-purchase__button{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding-left: 50px;
+    border: none;
+    background-color: var(--color-white);
+    cursor: pointer;
+}
