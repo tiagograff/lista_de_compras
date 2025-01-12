@@ -57,6 +57,7 @@
     overflow: hidden;
     white-space: nowrap; 
     direction: ltr;
+    background-color: var(--color-white);
   }
   
   .modal__submit {
