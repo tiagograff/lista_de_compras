@@ -6,6 +6,7 @@
 .add__button{
     border: none;
     background-color: var(--color-white);
+    cursor: pointer;
 }
 
 .add_image{

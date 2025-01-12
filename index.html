@@ -23,6 +23,30 @@
         <img class="add_image" src="./public/img/add.svg" alt="add button" />
       </button>
     </section>
+    <section class="modal" id="modal" aria-hidden="true">
+      <div class="modal__content">
+        <button class="modal__close" id="close-modal">
+          <img
+            src="./public/img/close.svg"
+            alt="close image"
+            id="close-modal-image"
+          />
+        </button>
+        <h2 class="modal__title" id="modal-title">Adicionar Item:</h2>
+        <form class="modal__form" id="modal-form">
+          <input
+            type="text"
+            id="item-name"
+            class="modal__input"
+            name="item-name"
+            placeholder="Digite o nome do item..."
+            required
+          />
+          <button type="submit" class="modal__submit">Adicionar</button>
+        </form>
+      </div>
+    </section>
+
     <section class="shopping-list"></section>
     <section class="complete-purchase">
       <button class="complete-purchase__button" id="complete-button">
