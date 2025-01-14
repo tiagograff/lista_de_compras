@@ -8,12 +8,10 @@ const form = document.getElementById("modal-form");
 const addButton = document.getElementById("add-button");
 const closeModalButton = document.getElementById("close-modal");
 
-// Função para salvar no localStorage
 function saveToLocalStorage() {
   localStorage.setItem("shoppingList", JSON.stringify(itemsList));
 }
 
-// Função para renderizar a lista
 function renderShoppingList() {
   sectionShoppingList.innerHTML = "";
 
@@ -77,13 +75,11 @@ function renderShoppingList() {
   }
 }
 
-// Exibir modal
 addButton.addEventListener("click", () => {
   modal.style.display = "flex";
   modal.setAttribute("aria-hidden", "false");
 });
 
-// Fechar modal
 closeModalButton.addEventListener("click", () => {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
@@ -96,7 +92,6 @@ window.addEventListener("click", (event) => {
   }
 });
 
-// Adicionar item na lista
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -117,5 +112,13 @@ form.addEventListener("submit", (event) => {
   form.reset();
 });
 
-// Inicializar a lista na tela
+buttonComplete.addEventListener("click", () => {
+  const confirmPurchase = confirm("Deseja finalizar a compra?");
+  if (confirmPurchase) {
+    itemsList.splice(0, itemsList.length);
+    saveToLocalStorage();
+    renderShoppingList();
+  }
+});
+
 renderShoppingList();

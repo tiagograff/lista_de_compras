@@ -77,3 +77,9 @@
     color: var(--color-green);
   }
   
+  @media screen and (max-width: 426px) {
+    .modal__input {
+      width: 80%;
+    }
+    
+  }
