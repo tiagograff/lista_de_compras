@@ -11,11 +11,14 @@ const closeModalButton = document.getElementById("close-modal");
 function saveToLocalStorage() {
   localStorage.setItem("shoppingList", JSON.stringify(itemsList));
 }
+const existingSubtitle = document.querySelector(".shopping-list-title");
 
 function renderShoppingList() {
+  // Limpa o conteúdo atual da seção de lista
   sectionShoppingList.innerHTML = "";
 
   if (itemsList.length === 0) {
+    // Lista vazia: exibir mensagem
     const emptyListMessage = document.createElement("p");
     emptyListMessage.textContent = "Sua lista de compras está vazia!";
     emptyListMessage.style.color = "var(--color-red)";
@@ -24,15 +27,20 @@ function renderShoppingList() {
     sectionShoppingList.appendChild(emptyListMessage);
     sectionComplete.style.display = "none";
   } else {
+    // Lista não vazia: exibir subtítulo e itens
     sectionComplete.style.display = "block";
 
+    // Verificar e adicionar subtítulo
+    const subtitle = document.createElement("h2");
+    subtitle.textContent = "Lista de Compras:";
+    subtitle.classList.add("shopping-list-title");
+    subtitle.style.fontSize = "var(--font-subtitle)";
+    subtitle.style.fontWeight = "normal";
+    subtitle.style.padding = "0 0 50px 50px";
+    sectionShoppingList.appendChild(subtitle);
+
+    // Renderizar itens
     itemsList.forEach((item, index) => {
-      const itemSubtitle = document.createElement("h2");
-      itemSubtitle.textContent = "Lista de Compras:";
-      itemSubtitle.style.fontSize = "var(--font-subtitle)";
-      itemSubtitle.style.fontWeight = "normal";
-      itemSubtitle.style.padding = "0 0 50px 50px";
-      sectionShoppingList.appendChild(itemSubtitle);
       const listItem = document.createElement("div");
       listItem.classList.add("shopping-item");
 
